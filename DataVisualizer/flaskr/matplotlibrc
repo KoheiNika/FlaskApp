@@ -1,0 +1,3 @@
+font_location = 'C:\Windows\Fonts\BIZ-UDMinchoM.ttc'
+font_name = fm.FontProperties(fname=font_location).get_name()
+matplotlib.rc('font', family=font_name)

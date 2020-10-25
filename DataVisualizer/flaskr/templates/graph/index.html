@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Graph{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>{{ current_item }}</h2>
+  <img class="graph" name="{{ current_item }}" src="{{ url_for('static', filename=path) }}">
+  {% for item in items %}
+    <form action="{{ url_for('chart.csv_plot', item=item) }}" method="post">
+      <input type="submit" name="item_button" value="{{ item }}"></input>
+    </form>
+  {% endfor %}
+{% endblock %}
